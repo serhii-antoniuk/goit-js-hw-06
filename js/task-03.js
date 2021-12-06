@@ -13,15 +13,16 @@ const images = [
   },
 ];
 
-const galleryEl = document.querySelector('.gallery');
+const gallery = document.querySelector('.gallery');
+const fragment = [];
+
 images.forEach(element => {
-  galleryEl.insertAdjacentHTML(
-    `afterbegin`,
+  fragment.push(
     `<li><img src = ${element.url} alt = ${element.alt} width = '480' height = '320'/></li>`,
   );
 });
 
-const gallery = document.querySelector('.gallery');
+gallery.insertAdjacentHTML('afterBegin', fragment);
 
 gallery.style.display = 'flex';
 gallery.style.flexDirection = 'row';
